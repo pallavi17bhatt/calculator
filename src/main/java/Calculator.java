@@ -7,9 +7,9 @@ public class Calculator {
     return answer;
   }
 
-  public int divide(int value) {
+  public int divide(int value) throws Exception {
     if (value == 0)
-      System.out.println("can't divide by zero");
+      throw new Exception("can't divide by zero");
     else
       answer = answer / value;
     return answer;

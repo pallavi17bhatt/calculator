@@ -26,7 +26,12 @@ public class Parser {
     }
     else if ("divide".equals((command[0]))) {
       int commandArg = Integer.parseInt(command[1]);
-      int response = calcy.divide(commandArg);
+      int response = 0;
+      try {
+        response = calcy.divide(commandArg);
+      } catch (Exception e) {
+        return e.getMessage();
+      }
       return String.valueOf(response);
     }
     return "Invalid Command! Please re-enter.";
