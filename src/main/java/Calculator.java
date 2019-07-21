@@ -11,24 +11,37 @@ public class Calculator {
     while (true) {
       String inputValue = sc.nextLine();
       String command[] = inputValue.split(" ");
-      int commandArg = Integer.parseInt(command[1]);
-      executeCommand(calcy, command[0], commandArg);
+      executeCommand(calcy, command);
     }
   }
 
-  private static void executeCommand(Calculator calcy, String commandName, int commandArg) {
-    if ("add".equals(commandName)) {
+  private static void executeCommand(Calculator calcy, String[] command) {
+
+    if ("add".equals(command[0])) {
+      int commandArg = Integer.parseInt(command[1]);
       int response = calcy.add(commandArg);
       System.out.println(response);
-    } else if ("subtract".equals(commandName)) {
+    }
+    else if ("subtract".equals(command[0])) {
+      int commandArg = Integer.parseInt(command[1]);
       int response = calcy.subtract(commandArg);
       System.out.println(response);
-    } else if ("multiply".equals(commandName)) {
+    }
+    else if ("multiply".equals(command[0])) {
+      int commandArg = Integer.parseInt(command[1]);
       int response = calcy.multiply(commandArg);
       System.out.println(response);
-    } else if ("divide".equals((commandName))) {
+    }
+    else if ("divide".equals((command[0]))) {
+      int commandArg = Integer.parseInt(command[1]);
       int response = calcy.divide(commandArg);
       System.out.println(response);
+    }
+    else if("exit".equals(command[0])){
+      System.exit(0);
+    }
+    else {
+      System.out.println("Invalid Command! Please re-enter.");
     }
   }
 
