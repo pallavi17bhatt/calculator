@@ -1,27 +1,32 @@
 public class Calculator {
 
-  int answer = 0;
+  private int answer;
 
-  public int multiply(int value) {
-    answer = answer * value;
-    return answer;
+  Calculator(int initialValue) {
+    answer = initialValue;
   }
 
-  public int divide(int value) throws Exception {
+  public void multiply(int value) {
+    answer = answer * value;
+  }
+
+  public void divide(int value) throws Exception {
     if (value == 0)
       throw new Exception("can't divide by zero");
     else
       answer = answer / value;
-    return answer;
   }
 
-  public int add(int value) {
+  public void add(int value) {
     answer = answer + value;
-    return answer;
   }
 
-  public int subtract(int value) {
+  public void subtract(int value) {
     answer = answer - value;
-    return answer;
+  }
+
+  @Override
+  public String toString() {
+    return String.valueOf(answer);
   }
 }

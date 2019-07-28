@@ -4,10 +4,9 @@ public class Application {
     Parser parser = new Parser(calcy);
     Console console = new Console();
 
-    while (true) {
+    while(true) {
       String inputValue = console.getInput();
       String command[] = inputValue.split(" ");
-
       if("exit".equals(command[0])){
         console.exit();
       }

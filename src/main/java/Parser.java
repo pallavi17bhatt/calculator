@@ -10,29 +10,28 @@ public class Parser {
 
     if ("add".equals(command[0])) {
       int commandArg = Integer.parseInt(command[1]);
-      int response = calcy.add(commandArg);
-      return String.valueOf(response);
+      calcy.add(commandArg);
+      return calcy.toString();
     }
     else if ("subtract".equals(command[0])) {
       int commandArg = Integer.parseInt(command[1]);
-      int response = calcy.subtract(commandArg);
-      return String.valueOf(response);
+      calcy.subtract(commandArg);
+      return calcy.toString();
 
     }
     else if ("multiply".equals(command[0])) {
       int commandArg = Integer.parseInt(command[1]);
-      int response = calcy.multiply(commandArg);
-      return String.valueOf(response);
+      calcy.multiply(commandArg);
+      return calcy.toString();
     }
     else if ("divide".equals((command[0]))) {
       int commandArg = Integer.parseInt(command[1]);
-      int response = 0;
       try {
-        response = calcy.divide(commandArg);
+        calcy.divide(commandArg);
       } catch (Exception e) {
         return e.getMessage();
       }
-      return String.valueOf(response);
+      return calcy.toString();
     }
     return "Invalid Command! Please re-enter.";
   }
