@@ -18,4 +18,46 @@ public class CalculatorTest {
 
   }
 
+  @Test
+  public void specShouldUpdateAnswerTo5when3isSubtractedFromCalculatorWithUpdatedValueInitialValue8(){
+    int input = 3;
+    String expectedAnswer = "5";
+    Calculator c = new Calculator(8);
+
+    c.subtract(input);
+
+    String actualAnswer = c.toString();
+    assertEquals(expectedAnswer, actualAnswer);
+ }
+
+  @Test
+  public void specShouldUpdateAnswerTo24when3isMultipliedFromCalculatorWithUpdatedValueInitialValue8(){
+    int input = 3;
+    String expectedAnswer = "24";
+    Calculator c = new Calculator(8);
+
+    c.multiply(input);
+
+    String actualAnswer = c.toString();
+    assertEquals(expectedAnswer, actualAnswer);
+  }
+
+  @Test
+  public void specShouldUpdateAnswerTo3when6isDividedFromCalculatorWithInitialValue2(){
+    int input = 6;
+    String expectedAnswer = "3";
+    Calculator c = new Calculator(2);
+
+    try {
+      c.divide(input);
+    } catch (Exception e) {
+
+      e.printStackTrace();
+    }
+
+    String actualAnswer = c.toString();
+    assertEquals(expectedAnswer, actualAnswer);
+  }
+
+
 }
